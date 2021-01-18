@@ -1,8 +1,23 @@
-// Fonts
+
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
 
-// Variables
-@import 'variables';
-
-// Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import 'variables';
+@import 'styles/navbar.scss';
+@import 'styles/sidebar.scss';
+
+html{
+    line-height: 1.5rem;
+    background-color: $body-bg;
+    background: url("/images/background.gif");
+}
+
+body {
+    font-size: .875rem;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
