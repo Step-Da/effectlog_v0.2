@@ -6,7 +6,16 @@
   <input class="form-control form-control-dark w-100" type="text" placeholder="Поиск" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="{{ route('authorization') }}" >Войти в систему</a>
+      @guest
+        <a class="nav-link" href="{{ route('authorization') }}" >Войти в систему</a>
+      @else
+        <a class="nav-link" href="{{ route('logout') }}" role="button" 
+          onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">Выход&nbsp;({{ Auth::user()->name }})</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="exit-profile">
+          @csrf
+        </form>
+      @endguest
     </li>
   </ul>
 </nav>

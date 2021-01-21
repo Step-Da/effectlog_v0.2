@@ -11037,6 +11037,10 @@ a.text-dark:focus {
   margin-left: 10px;
 }
 
+.exit-profile {
+  display: none;
+}
+
 html {
   line-height: 1.5rem;
   background-color: #f8fafc;
