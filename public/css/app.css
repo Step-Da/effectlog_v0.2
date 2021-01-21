@@ -11022,9 +11022,28 @@ a.text-dark:focus {
   margin: 5px;
 }
 
+.aut-group {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+
+.aut-form-header {
+  background-color: #494e54;
+  color: #ffffff;
+}
+
+.login-regist-link {
+  margin-left: 10px;
+}
+
 html {
   line-height: 1.5rem;
   background-color: #f8fafc;
+  background: url("/images/background.gif");
+}
+
+main {
   background: url("/images/background.gif");
 }
 

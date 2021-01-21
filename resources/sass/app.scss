@@ -7,11 +7,16 @@
 @import 'variables';
 @import 'styles/navbar.scss';
 @import 'styles/sidebar.scss';
+@import 'styles/auth.scss';
 
 html{
     line-height: 1.5rem;
     background-color: $body-bg;
-    background: url("/images/background.gif");
+    background: $background-main-image;
+}
+
+main{
+    background: $background-main-image;
 }
 
 body {
