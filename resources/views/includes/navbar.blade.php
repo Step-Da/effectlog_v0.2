@@ -7,7 +7,7 @@
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       @guest
-        <a class="nav-link" href="{{ route('authorization') }}" >Войти в систему</a>
+        <a class="nav-link" href="{{ route('authorization') }}">Войти в систему</a>
       @else
         <a class="nav-link" href="{{ route('logout') }}" role="button" 
           onclick="event.preventDefault();
