@@ -11,13 +11,13 @@
 |
 */
 
+use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('home');
-})->name('homePage');
-
+Route::get('/', 'HomeController@index')->name('homePage');
 Route::get('/auth', 'AuthController@index')->name('authorization');
+
+Route::get('/unit/{id}', 'UnitController@index')->name('view-unit');
