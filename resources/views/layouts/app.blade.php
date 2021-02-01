@@ -12,6 +12,7 @@
 
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="https://kit.fontawesome.com/6b092b8925.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     </head>
     <body>
         @include('includes.navbar')

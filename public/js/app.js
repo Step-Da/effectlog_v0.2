@@ -49725,6 +49725,10 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./сounters */ "./resources/js/сounters.js");
+
+__webpack_require__(/*! ./charts/pie */ "./resources/js/charts/pie.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
@@ -49756,6 +49760,37 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; // 
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/charts/pie.js":
+/*!************************************!*\
+  !*** ./resources/js/charts/pie.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var nameUnit = $('#nameUnit').text();
+new Chart(document.getElementById("item-counter-chart"), {
+  type: 'horizontalBar',
+  data: {
+    labels: ["Всего элементов", "Успешные", "Проваленные"],
+    datasets: [{
+      label: "Остатки обновления (тыс.)",
+      backgroundColor: ["#fca656cb", "#2bff72c6", "#e05353d1"],
+      data: [2478, 520, 73]
+    }]
+  },
+  options: {
+    legend: {
+      display: false
+    },
+    title: {
+      display: true,
+      text: 'Графическое отображение остатков обновления поставщика (компании): ' + nameUnit
+    }
+  }
+});
 
 /***/ }),
 
@@ -49825,6 +49860,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/сounters.js":
+/*!**********************************!*\
+  !*** ./resources/js/сounters.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('.counter').each(function () {
+    $(this).prop('Counter', 0).animate({
+      Counter: $(this).text()
+    }, {
+      duration: 4000,
+      easing: 'swing',
+      step: function step(now) {
+        $(this).text(Math.ceil(now));
+      }
+    });
+  });
+});
 
 /***/ }),
 

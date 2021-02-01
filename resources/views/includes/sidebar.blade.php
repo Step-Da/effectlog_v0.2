@@ -2,7 +2,7 @@
     <div class="sidebar-sticky pt-3">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{{ route('homePage') }}">
             <span><i class="fas fa-users sidebar-icon"></i></span>
             Поставщики
           </a>

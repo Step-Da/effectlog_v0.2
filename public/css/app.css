@@ -11090,14 +11090,44 @@ a.text-dark:focus {
   color: #000 !important;
 }
 
+.counters-color {
+  padding: 5px;
+  margin-right: 25px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.counters-color--successful {
+  background: #2bff72c6;
+}
+
+.counters-color--unsuccessful {
+  background: #e05353d1;
+}
+
+.counters-color--all {
+  background: #fca656cb;
+}
+
+.table-row-color--true {
+  background-color: #2bff72c6;
+}
+
+.table-row-color--false {
+  background-color: #e05353d1;
+}
+
+.ff {
+  display: flex;
+}
+
 html {
   line-height: 1.5rem;
   background-color: #f8fafc;
-  background: url("/images/background.gif");
 }
 
 main {
-  background: url("/images/background.gif");
+  background-color: #f8fafc;
 }
 
 body {

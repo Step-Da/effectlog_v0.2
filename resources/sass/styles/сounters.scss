@@ -1,0 +1,33 @@
+.counters-color{
+    padding: 5px;
+    margin-right: 25px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+
+    &--successful{
+        background: $successful-color;
+    }
+
+    &--unsuccessful{
+        background: $unsuccessful-color;
+    }
+
+    &--all{
+        background: $all-color;
+    }
+}
+
+.table-row-color{
+    &--true{
+        background-color: $successful-color;
+    }
+
+    &--false{
+        background-color: $unsuccessful-color;
+    }
+}
+
+.ff{
+    display: flex;
+
+}
