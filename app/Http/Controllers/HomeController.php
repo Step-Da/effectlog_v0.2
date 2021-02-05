@@ -18,8 +18,6 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
@@ -29,6 +27,11 @@ class HomeController extends Controller
         return view('home', [
             'data' => $unit->all()
         ]);
+    }
+
+    public function about()
+    {
+        return view('about');
     }
 
     

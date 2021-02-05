@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('homePage');
 Route::get('/auth', 'AuthController@index')->name('authorization');
 Route::get('/unit/{id}', 'UnitController@index')->name('view-unit');
+Route::get('/about','HomeController@about')->name('about-info');
 
 // Route::get('/dd/{list}', 'Ajax\BuilderController@index');
 // Route::get('/dd', 'Ajax\BuilderController@index');

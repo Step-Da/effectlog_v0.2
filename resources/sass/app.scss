@@ -10,17 +10,18 @@
 @import 'styles/auth.scss';
 @import 'styles/libraty_card.scss';
 @import 'styles/сounters.scss';
+@import 'styles/abount.scss';
 
 
 html{
     line-height: 1.5rem;
     background-color: $body-bg;
-    //background: $background-main-image;
+    background: $background-main-image;
 }
 
 main{
     background-color: $body-bg;
-    //background: $background-main-image;
+    background: $background-main-image;
 }
 
 body {

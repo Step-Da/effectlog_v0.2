@@ -1,0 +1,27 @@
+.width-auto {
+    width: auto;
+}
+
+.text-lg {
+    font-size: 2rem;
+    color: $black;
+}
+
+.carousel-indicators li {
+    border: none;
+    background: $body-bg;
+}
+
+.carousel-indicators li.active {
+    background: $about-characters;
+}
+
+.watch-text-info{
+    color: $black;
+    font-size: 1.2rem;
+    font-family: $brand-text-en;
+}
+
+.characters-color{
+    color: $about-characters;
+}

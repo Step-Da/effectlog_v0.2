@@ -11121,13 +11121,43 @@ a.text-dark:focus {
   display: flex;
 }
 
+.width-auto {
+  width: auto;
+}
+
+.text-lg {
+  font-size: 2rem;
+  color: #000;
+}
+
+.carousel-indicators li {
+  border: none;
+  background: #f8fafc;
+}
+
+.carousel-indicators li.active {
+  background: #f72f2fe0;
+}
+
+.watch-text-info {
+  color: #000;
+  font-size: 1.2rem;
+  font-family: "Work Sans";
+}
+
+.characters-color {
+  color: #f72f2fe0;
+}
+
 html {
   line-height: 1.5rem;
   background-color: #f8fafc;
+  background: url("/images/background.jpg");
 }
 
 main {
   background-color: #f8fafc;
+  background: url("/images/background.jpg");
 }
 
 body {
