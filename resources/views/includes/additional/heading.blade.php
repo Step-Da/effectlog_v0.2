@@ -4,15 +4,15 @@
     <div class="ff">
       <div class="counters-color counters-color--all">
         <span>Всего элементов:</span>
-        <span class="counter">156</span>
+        <span id="all-field" class="counter">@yield('all-count-log')</span>
       </div>
       <div class="counters-color counters-color--successful">
         <span>Успешные:</span>
-        <span class="counter">156</span>
+        <span id="successful-field" class="counter">@yield('successful-count-log')</span>
       </div>
       <div class="counters-color counters-color--unsuccessful">
         <span>Проваленные:</span>
-        <span class="counter">156</span>
+        <span id="unsuccessful-field" class="counter">@yield('unsuccessful-count-log')</span>
       </div>
     </div>
     <div class="btn-toolbar mb-2 mb-md-0">

@@ -1,6 +1,9 @@
 require('./bootstrap');
 require('./сounters');
-require('./charts/pie');
+require('./builder');
+
+require('./charts/horizontal');
+require('./charts/line');
 
 window.Vue = require('vue');
 window.$ = window.jQuery = require('jquery');

@@ -49727,7 +49727,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./сounters */ "./resources/js/сounters.js");
 
-__webpack_require__(/*! ./charts/pie */ "./resources/js/charts/pie.js");
+__webpack_require__(/*! ./builder */ "./resources/js/builder.js");
+
+__webpack_require__(/*! ./charts/horizontal */ "./resources/js/charts/horizontal.js");
+
+__webpack_require__(/*! ./charts/line */ "./resources/js/charts/line.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
@@ -49763,14 +49767,59 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; // 
 
 /***/ }),
 
-/***/ "./resources/js/charts/pie.js":
-/*!************************************!*\
-  !*** ./resources/js/charts/pie.js ***!
-  \************************************/
+/***/ "./resources/js/builder.js":
+/*!*********************************!*\
+  !*** ./resources/js/builder.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var nameUnit = $('#nameUnit').text();
+// $("#testButton").click(function(){
+//     $.ajaxSetup({
+//         headers: {
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//         }
+//     });
+//     $.ajax({
+//         url:'/dd',
+//         method:'POST',
+//         data: {
+//             "_token": "{{ csrf_token() }}",
+//         }
+//     }).done(function(data){
+//         console.log(data);
+//         alert(data);
+//     });
+// });
+// $("#testButton").click(function(){
+// $.ajax({
+//     type:'GET',
+//     url: "/dd",
+//     headers: {
+//         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+//     },
+//     date:{
+//         pp:'fff',
+//     }
+//     }).done(function(data){
+//         console.log(data);
+//         document.getElementById('testTable').innerHTML += data;
+//     });
+// });
+
+/***/ }),
+
+/***/ "./resources/js/charts/horizontal.js":
+/*!*******************************************!*\
+  !*** ./resources/js/charts/horizontal.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var name = $('#nameUnit').text();
+var all = document.getElementById('all-field').textContent;
+var success = document.getElementById('successful-field').textContent;
+var error = document.getElementById('unsuccessful-field').textContent;
 new Chart(document.getElementById("item-counter-chart"), {
   type: 'horizontalBar',
   data: {
@@ -49778,7 +49827,7 @@ new Chart(document.getElementById("item-counter-chart"), {
     datasets: [{
       label: "Остатки обновления (тыс.)",
       backgroundColor: ["#fca656cb", "#2bff72c6", "#e05353d1"],
-      data: [2478, 520, 73]
+      data: [all, success, error]
     }]
   },
   options: {
@@ -49787,7 +49836,41 @@ new Chart(document.getElementById("item-counter-chart"), {
     },
     title: {
       display: true,
-      text: 'Графическое отображение остатков обновления поставщика (компании): ' + nameUnit
+      text: 'Графическое отображение остатков обновления поставщика (компании): ' + name
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/charts/line.js":
+/*!*************************************!*\
+  !*** ./resources/js/charts/line.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var name = $('#nameUnit').text();
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
+    datasets: [{
+      data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
+      label: "Успешные",
+      borderColor: "#2bff72c6",
+      fill: false
+    }, {
+      data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
+      label: "Проваленные",
+      borderColor: "#e05353d1",
+      fill: false
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Период фиксации остатков обновления поставщика (компании): ' + name
     }
   }
 });

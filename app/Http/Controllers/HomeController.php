@@ -25,6 +25,11 @@ class HomeController extends Controller
     public function index()
     {
         $unit = new Unit;
-        return view('home', ['data' => $unit->all()]);
+    
+        return view('home', [
+            'data' => $unit->all()
+        ]);
     }
+
+    
 }
