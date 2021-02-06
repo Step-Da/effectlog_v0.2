@@ -49729,6 +49729,8 @@ __webpack_require__(/*! ./сounters */ "./resources/js/сounters.js");
 
 __webpack_require__(/*! ./builder */ "./resources/js/builder.js");
 
+__webpack_require__(/*! ./liveSearch */ "./resources/js/liveSearch.js");
+
 __webpack_require__(/*! ./charts/horizontal */ "./resources/js/charts/horizontal.js");
 
 __webpack_require__(/*! ./charts/line */ "./resources/js/charts/line.js");
@@ -49943,6 +49945,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/liveSearch.js":
+/*!************************************!*\
+  !*** ./resources/js/liveSearch.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $("#filter").keyup(function () {
+    var filter = $(this).val();
+    $(".search").each(function () {
+      if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+        $(this).fadeOut();
+      } else {
+        $(this).show();
+      }
+    });
+  });
+});
 
 /***/ }),
 

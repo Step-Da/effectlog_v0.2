@@ -1,6 +1,7 @@
 require('./bootstrap');
 require('./сounters');
 require('./builder');
+require('./liveSearch');
 
 require('./charts/horizontal');
 require('./charts/line');
