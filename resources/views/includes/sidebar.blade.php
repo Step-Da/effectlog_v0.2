@@ -2,10 +2,13 @@
   <div class="sidebar-sticky pt-3">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('homePage') }}">
-          <span><i class="fas fa-users sidebar-icon"></i></span>
-          Поставщики
-        </a>
+        <div class="line-item-sidebar">
+          <a class="nav-link" href="{{ route('homePage') }}">
+            <span><i class="fas fa-users sidebar-icon"></i></span>
+            Поставщики<span>
+          </a>
+          <span onclick="location.href='{{ route('watch-unit') }}';" ><i class="fas fa-plus-square sidebar-icon--additional-icon"></i></span>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">

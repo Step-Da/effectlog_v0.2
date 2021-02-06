@@ -2,8 +2,8 @@
 
 @section('web-title', 'Поставщик: '.$data->name)
 @section('all-count-log', count($_SESSION['list']))
-@section('successful-count-log', $statistics['success'])
-@section('unsuccessful-count-log', $statistics['error'])
+{{-- @section('successful-count-log', $statistics['success'])
+@section('unsuccessful-count-log', $statistics['error']) --}}
 
     
 @section('content')
