@@ -3,7 +3,9 @@
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input id="filter" class="form-control form-control-dark w-100" type="text" placeholder="Поиск" aria-label="Search">
+  @if (Request::is('/'))
+    <input id="filter" class="form-control form-control-dark w-100" type="text" placeholder="Поиск" aria-label="Search">
+  @endif
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       @guest

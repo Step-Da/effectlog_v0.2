@@ -17,7 +17,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('user-watch') }}">
           <span><i class="fas fa-street-view sidebar-icon"></i></span>
           Пользователи
         </a>
