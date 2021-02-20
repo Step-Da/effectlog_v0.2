@@ -1,3 +1,4 @@
+//Функция живого поиска в каталоге поставщиков
 $(document).ready(function(){
     $("#filter").keyup(function(){
         var filter = $(this).val();

@@ -49723,18 +49723,23 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Стиили Bootstrap
 
-__webpack_require__(/*! ./сounters */ "./resources/js/сounters.js");
 
-__webpack_require__(/*! ./liveSearch */ "./resources/js/liveSearch.js");
+__webpack_require__(/*! ./сounters */ "./resources/js/сounters.js"); //Живой счетчик
 
-__webpack_require__(/*! ./charts/horizontal */ "./resources/js/charts/horizontal.js");
 
-__webpack_require__(/*! ./charts/line */ "./resources/js/charts/line.js");
+__webpack_require__(/*! ./liveSearch */ "./resources/js/liveSearch.js"); //Живой поиск
+//Подключение графиков для статистики поставщика
+
+
+__webpack_require__(/*! ./charts/horizontal */ "./resources/js/charts/horizontal.js"); //Горизонтальный вывод графика
+// require('./charts/line'); //Линейный (кривая) вывод графика
+
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"); //Подключение JQuery
+
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 
 /***/ }),
@@ -49774,10 +49779,15 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; // 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var name = $('#nameUnit').text();
-var all = document.getElementById('all-field').textContent;
-var success = document.getElementById('successful-field').textContent;
-var error = document.getElementById('unsuccessful-field').textContent;
+var name = $('#nameUnit').text(); //Наименование поставщика
+
+var all = document.getElementById('all-field').textContent; //Статистика: числов всех компонентов обновления остатков
+
+var success = document.getElementById('successful-field').textContent; //Статистика: число всех успешных компонетов обновления остатков
+
+var error = document.getElementById('unsuccessful-field').textContent; //Ститистика: число всех проваленных компонетов обновления остатков 
+//Формирование и вывод горизонтального графика
+
 new Chart(document.getElementById("item-counter-chart"), {
   type: 'horizontalBar',
   data: {
@@ -49795,40 +49805,6 @@ new Chart(document.getElementById("item-counter-chart"), {
     title: {
       display: true,
       text: 'Графическое отображение остатков обновления поставщика (компании): ' + name
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./resources/js/charts/line.js":
-/*!*************************************!*\
-  !*** ./resources/js/charts/line.js ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var name = $('#nameUnit').text();
-new Chart(document.getElementById("line-chart"), {
-  type: 'line',
-  data: {
-    labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
-    datasets: [{
-      data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
-      label: "Успешные",
-      borderColor: "#2bff72c6",
-      fill: false
-    }, {
-      data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
-      label: "Проваленные",
-      borderColor: "#e05353d1",
-      fill: false
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'Период фиксации остатков обновления поставщика (компании): ' + name
     }
   }
 });
@@ -49911,6 +49887,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+//Функция живого поиска в каталоге поставщиков
 $(document).ready(function () {
   $("#filter").keyup(function () {
     var filter = $(this).val();
@@ -49933,6 +49910,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+//Функция живого вывода статистика на странице
 $(document).ready(function () {
   $('.counter').each(function () {
     $(this).prop('Counter', 0).animate({

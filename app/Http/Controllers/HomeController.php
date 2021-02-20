@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Конструкт для создания нового экземпляра контроллера
      *
      * @return void
      */
@@ -18,7 +18,10 @@ class HomeController extends Controller
     }
 
     /**
+     * Рендер начальной (домашней) страницы сайта
+     * 
      * @return \Illuminate\Contracts\Support\Renderable
+     * @return mixed $data Данные всех поставщиков в системе 
      */
     public function index()
     {
@@ -29,6 +32,11 @@ class HomeController extends Controller
         ]);
     }
 
+    /**
+     * Рендер страницы "О программе"
+     *
+     * @return view
+     */
     public function about()
     {
         return view('about');

@@ -1,8 +1,9 @@
-let name = $('#nameUnit').text();
-let all = document.getElementById('all-field').textContent;
-let success = document.getElementById('successful-field').textContent;
-let error = document.getElementById('unsuccessful-field').textContent;
+let name = $('#nameUnit').text(); //Наименование поставщика
+let all = document.getElementById('all-field').textContent; //Статистика: числов всех компонентов обновления остатков
+let success = document.getElementById('successful-field').textContent; //Статистика: число всех успешных компонетов обновления остатков
+let error = document.getElementById('unsuccessful-field').textContent; //Ститистика: число всех проваленных компонетов обновления остатков 
 
+//Формирование и вывод горизонтального графика
 new Chart(document.getElementById("item-counter-chart"), {
     type: 'horizontalBar',
     data: {

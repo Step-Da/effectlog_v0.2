@@ -1,5 +1,6 @@
-let name = $('#nameUnit').text();
+let name = $('#nameUnit').text();//Наименование поставщика
 
+//Формирование и вывод линейного графика
 new Chart(document.getElementById("line-chart"), {
     type: 'line',
     data: {

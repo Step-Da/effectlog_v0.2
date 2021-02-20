@@ -1,3 +1,4 @@
+//Функция живого вывода статистика на странице
 $(document).ready(function () {
     $('.counter').each(function () {
         $(this).prop('Counter', 0).animate({

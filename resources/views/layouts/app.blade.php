@@ -8,14 +8,20 @@
 
         <title>@yield('web-title')</title>
 
+        {{-- Основные стили ресурса --}}
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        {{-- Подключение фавикона ресурса --}}
         <link rel="shortcut icon" href="{{ asset('images/_favicon.ico') }}">
 
+        {{-- Основные js скрипты ресусра --}}
         <script src="{{ asset('js/app.js') }}" defer></script>
+        {{-- Подключение иконок font awesome --}}
         <script src="https://kit.fontawesome.com/6b092b8925.js" crossorigin="anonymous"></script>
+        {{-- Подключение библиотеки для вывода графика --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     </head>
     <body>
+        {{-- Основной layout ресурса --}}
         @include('includes.navbar')
         <div class="container-fluid">
             <div class="row">

@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Unit extends Model
 {  
+    /**
+     * Получение данных с сервера чарез строку (url)
+     * 
+     * @param string $url Строка подключение (ссылка)
+     * 
+     * @return mixed #decode Ответ (данные) с сервера
+     */
     public function readURL($url)
     {
         $crequest = curl_init();
@@ -25,6 +32,13 @@ class Unit extends Model
         return $decode;
     }
 
+    /**
+     * Составление статистки на основе полученных данных с сервера
+     * 
+     * @param mixed $data Данные полученные с сервера
+     * 
+     * @return array $statistics Массив с статистикой
+     */
     public function watchStatistics($data)
     {
         $error = 0; $success = 0;

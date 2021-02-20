@@ -7,6 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class UnitRequest extends FormRequest
 {
     /**
+     * Авторизация пользователя
      * 
      * @return bool
      */
@@ -16,6 +17,7 @@ class UnitRequest extends FormRequest
     }
 
     /**
+     * Правила валидации пои создании нового поставщика
      * 
      * @return array
      */
@@ -28,6 +30,11 @@ class UnitRequest extends FormRequest
         ];
     }
 
+    /**
+     * Русификация аттрибутов модели
+     * 
+     * @return array
+     */
     public function attributes()
     {
         return[
@@ -37,6 +44,11 @@ class UnitRequest extends FormRequest
         ];
     }
 
+    /**
+     * Сообщение при нарушении правил валидации
+     * 
+     * @return array
+     */
     public function messages()
     {
         return[
