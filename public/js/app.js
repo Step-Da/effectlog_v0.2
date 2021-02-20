@@ -49727,8 +49727,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./сounters */ "./resources/js/сounters.js");
 
-__webpack_require__(/*! ./builder */ "./resources/js/builder.js");
-
 __webpack_require__(/*! ./liveSearch */ "./resources/js/liveSearch.js");
 
 __webpack_require__(/*! ./charts/horizontal */ "./resources/js/charts/horizontal.js");
@@ -49765,48 +49763,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; // 
 //     key: process.env.MIX_PUSHER_APP_KEY,
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
-// });
-
-/***/ }),
-
-/***/ "./resources/js/builder.js":
-/*!*********************************!*\
-  !*** ./resources/js/builder.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// $("#testButton").click(function(){
-//     $.ajaxSetup({
-//         headers: {
-//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//         }
-//     });
-//     $.ajax({
-//         url:'/dd',
-//         method:'POST',
-//         data: {
-//             "_token": "{{ csrf_token() }}",
-//         }
-//     }).done(function(data){
-//         console.log(data);
-//         alert(data);
-//     });
-// });
-// $("#testButton").click(function(){
-// $.ajax({
-//     type:'GET',
-//     url: "/dd",
-//     headers: {
-//         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-//     },
-//     date:{
-//         pp:'fff',
-//     }
-//     }).done(function(data){
-//         console.log(data);
-//         document.getElementById('testTable').innerHTML += data;
-//     });
 // });
 
 /***/ }),

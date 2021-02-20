@@ -14,9 +14,12 @@
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 Auth::routes();
+
 Route::get('/logout', function(){
     Auth::logout();
     return Redirect::to('login');
@@ -25,6 +28,8 @@ Route::get('/logout', function(){
 Route::get('/', 'HomeController@index')->name('homePage');
 Route::get('/auth', 'AuthController@index')->name('authorization');
 Route::get('/unit/{id}', 'UnitController@index')->name('view-unit');
+Route::get('unit/{id}/table', 'UnitController@table')->name('view-unit-table');
+
 Route::get('/about','HomeController@about')->name('about-info');
 
 Route::get('/watchunit', 'UnitController@watch')->name('watch-unit');
