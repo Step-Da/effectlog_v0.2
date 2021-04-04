@@ -4,8 +4,8 @@
       <li class="nav-item">
         <div class="line-item-sidebar">
           <a class="nav-link" href="{{ route('homePage') }}">
-            <span><i class="fas fa-users sidebar-icon"></i></span>
-            Поставщики<span>
+            <span><i class="fas fa-users sidebar-icon"></i>
+            </span>Поставщики<span>
           </a>
           <span onclick="location.href='{{ route('watch-unit') }}';" ><i class="fas fa-plus-square sidebar-icon--additional-icon"></i></span>
         </div>

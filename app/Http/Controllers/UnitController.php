@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UnitRequest;
+use App\Models\Offer;
 use App\Models\Unit;
 
 class UnitController extends Controller
@@ -19,10 +20,26 @@ class UnitController extends Controller
     public function index($id)
     {
         $unit = new Unit();
+        $offer = new Offer();
+
         $data = $unit->find($id);
-        $list = $unit->readURL($data->url);
-        $statistics = $unit->watchStatistics($list);
-    
+        $list = null;
+        
+        if($data->type == 'json'){
+            $list = $unit->readURL($data->url);
+            $statistics = $unit->watchStatistics($list);
+        }
+        else{
+            $xmalData = $unit->readXml($data->url);
+            if(Offer::count() == 0 ){
+                $unit->saveXmlData($xmalData);
+            }
+            $statistics = [
+                'all' => Offer::count(),
+                'success' => count($offer->where('active', true)->get()),
+                'error' => count(Offer::where('active', false)->get()),
+            ];
+        }
         return view('view', [
             'data' => $data,
             'statistics' => $statistics,
@@ -69,6 +86,7 @@ class UnitController extends Controller
         $unit->name = $request->input('name');
         $unit->url = $request->input('url');
         $unit->description = $request->input('description');
+        $unit->type = $request->input('type');
         $unit->save();
 
         return redirect()->route('watch-unit')->with('success', 'Новый поставщик (компания) был сформирован и добавлен в библиотеку');
@@ -113,6 +131,7 @@ class UnitController extends Controller
         $unit->name = $request->input('name');
         $unit->url = $request->input('url');
         $unit->description = $request->input('description');
+        $unit->type = $request->input('type');
         $unit->save();
 
         return redirect()->route('watch-unit')->with('success', 'Обновления информации о поставщике (компании) были зафиксированы');

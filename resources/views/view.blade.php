@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('web-title', 'Поставщик: '.$data->name)
-@section('all-count-log', count($list))
+@section('all-count-log', $statistics['all'])
 @section('successful-count-log', $statistics['success'])
 @section('unsuccessful-count-log', $statistics['error'])
     

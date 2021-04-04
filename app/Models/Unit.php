@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use SimpleXMLElement;
 
 class Unit extends Model
 {  
@@ -45,5 +46,43 @@ class Unit extends Model
         foreach($data as $item){ $item[0] == 10 ? ($error++) : ($success++); }
         $statistics = array('error' => $error, 'success' => $success);
         return $statistics;
+    }
+
+
+    public function readXml($url)
+    {
+        ini_set('max_execution_time', 300);
+        $xmlData = simplexml_load_file($url);
+    
+        $primaryArray = array();
+        $externalArray = array();
+
+        foreach($xmlData->shop->offers->offer as $element){
+            $primaryArray = [
+                'name' => $element->name,
+                'color' => $element->param[0],
+                'article' => $element->param[1],
+                'model' => $element->param[2],
+                'active' => $element->productActivity,
+                'picture' => $element->picture,
+            ];
+            array_push($externalArray, $primaryArray);
+        }
+        
+        return $externalArray;
+    }
+
+    public function saveXmlData($externalArray)
+    {
+        for($i=0; $i <= count($externalArray); $i++){
+            $offer = new Offer();
+            $offer->name = $externalArray[$i]['name'];
+            $offer->color = $externalArray[$i]['color'];
+            $offer->article = $externalArray[$i]['article'];
+            $offer->model = $externalArray[$i]['model'];
+            $externalArray[$i]['active'] == "Y" ? ($offer->active = 1) : ($offer->active = 0);
+            $offer->picture = $externalArray[$i]['picture'];
+            $offer->save();
+        }
     }
 }
