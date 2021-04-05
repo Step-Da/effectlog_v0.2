@@ -29,6 +29,7 @@ Route::get('/', 'HomeController@index')->name('homePage');//Домашняя с�
 Route::get('/auth', 'AuthController@index')->name('authorization');//Авторизация
 Route::get('/unit/{id}', 'UnitController@index')->name('view-unit');//Пользователь в системе
 Route::get('unit/{id}/table', 'UnitController@table')->name('view-unit-table');//Таблиа компонентов остатков обнволения поставщика
+Route::get('unit/{id}/xml/table', 'UnitController@xmltable')->name('view-unit-table-xml');
 
 Route::get('/about','HomeController@about')->name('about-info'); //О программе
 

@@ -12,3 +12,16 @@ $(document).ready(function () {
         });
     });
 });
+
+$('.image-button').click(function(){
+    if(event.target.tagName == 'I') {
+    event.preventDefault();
+    let title = event.target.title || '';
+      if(title) {
+        mirrorTitle = title;
+      }
+    }
+    $('#mirror-imag-offer').attr('src',mirrorTitle);
+    $('#mirror-image-link-offer').attr('href',mirrorTitle);
+    $('#imag-modal-window').trigger('click');
+});

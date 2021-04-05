@@ -11130,6 +11130,16 @@ a.text-dark:focus {
   display: flex;
 }
 
+.image-button {
+  cursor: pointer;
+}
+
+.offer-image {
+  display: inline-block \ block;
+  width: 50px auto;
+  height: auto(64px);
+}
+
 .width-auto {
   width: auto;
 }

@@ -10,3 +10,7 @@ window.Vue = require('vue');
 window.$ = window.jQuery = require('jquery'); //Подключение JQuery
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+$(document).ready(function() {
+    $(".mysuperimg").fancybox({ }); 
+});

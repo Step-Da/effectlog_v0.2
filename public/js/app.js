@@ -49741,6 +49741,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"); //Подключение JQuery
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+$(document).ready(function () {
+  $(".mysuperimg").fancybox({});
+});
 
 /***/ }),
 
@@ -49923,6 +49926,20 @@ $(document).ready(function () {
       }
     });
   });
+});
+$('.image-button').click(function () {
+  if (event.target.tagName == 'I') {
+    event.preventDefault();
+    var title = event.target.title || '';
+
+    if (title) {
+      mirrorTitle = title;
+    }
+  }
+
+  $('#mirror-imag-offer').attr('src', mirrorTitle);
+  $('#mirror-image-link-offer').attr('href', mirrorTitle);
+  $('#imag-modal-window').trigger('click');
 });
 
 /***/ }),

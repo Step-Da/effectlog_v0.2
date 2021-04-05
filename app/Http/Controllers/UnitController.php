@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UnitRequest;
 use App\Models\Offer;
 use App\Models\Unit;
+use Illuminate\Support\Facades\DB;
 
 class UnitController extends Controller
 {
@@ -62,6 +63,14 @@ class UnitController extends Controller
 
         $_SESSION['list'] = $list;
         return view('table');
+    }
+
+    public function xmltable($id)
+    {
+        $offers = DB::table('offers')->paginate(40);
+        return view('xmltable', [
+            'offers' => $offers,
+        ]);
     }
 
     /**

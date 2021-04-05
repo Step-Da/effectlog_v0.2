@@ -78,8 +78,13 @@
         <p>Как вывести таблицу с компонентами остатков обновления для компании {{ $data->name }}.</p>
       </div>
       <div class="modal-footer">
-        <a href="{{ route('view-unit-table', $data->id) }}" class="btn btn-sm btn-warning">В открытой вкладке</a>
-        <a href="{{ route('view-unit-table', $data->id) }}" class="btn btn-sm btn-success" target="_blank">В новой открытой вкладке</a>
+        @if ($data->type == 'json')
+          <a href="{{ route('view-unit-table', $data->id) }}" class="btn btn-sm btn-warning">В открытой вкладке</a>
+          <a href="{{ route('view-unit-table', $data->id) }}" class="btn btn-sm btn-success" target="_blank">В новой открытой вкладке</a>
+        @else
+          <a href="{{ route('view-unit-table-xml', $data->id) }}" class="btn btn-sm btn-warning">В открытой вкладке</a>
+          <a href="{{ route('view-unit-table-xml', $data->id) }}" class="btn btn-sm btn-success" target="_blank">В новой открытой вкладке</a>
+        @endif
         <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Закрыть</button>
       </div>
     </div>
